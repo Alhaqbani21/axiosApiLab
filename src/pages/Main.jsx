@@ -46,15 +46,39 @@ function Main() {
       </div>
       <div className="">
         {selectedCategory === 'posts' &&
-          data.map((item) => <div key={item.id}>{item.title}</div>)}
+          data.map((item) => (
+            <div key={item.id}>
+              {Object.keys(item).map((key) => (
+                <div key={key}>
+                  <strong>{key}:</strong> {item[key].toString()}
+                </div>
+              ))}
+            </div>
+          ))}
       </div>
       <div className="">
         {selectedCategory === 'users' &&
-          data.map((item) => <div key={item.id}>{item.name}</div>)}
+          data.map((item) => (
+            <div key={item.id}>
+              {Object.keys(item).map((key) => (
+                <div key={key}>
+                  <strong>{key}:</strong> {item[key].toString()}
+                </div>
+              ))}
+            </div>
+          ))}
       </div>
       <div className="">
         {selectedCategory === 'comments' &&
-          data.map((item) => <div key={item.id}>{item.body}</div>)}
+          data.map((item) => (
+            <div key={item.id}>
+              {Object.keys(item).map((key) => (
+                <div key={key}>
+                  <strong>{key}:</strong> {item[key].toString()}
+                </div>
+              ))}
+            </div>
+          ))}
       </div>
     </div>
   );
